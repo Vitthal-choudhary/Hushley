@@ -55,7 +55,11 @@ fun Launch(navController: NavHostController) {
 
             Button(
                 onClick = {
-                    navController.navigate(Screen.Home.route)
+                    navController.navigate(Screen.Home.route){
+                        popUpTo(Screen.Launch.route) {
+                            inclusive = true
+                        }
+                    }
                 },
                 modifier = Modifier
                     .requiredHeight(56.dp)
@@ -81,7 +85,11 @@ fun Launch(navController: NavHostController) {
             Spacer(modifier = Modifier.height(32.dp))
             Button(
                 onClick = {
-                    navController.navigate(Screen.Home.route)
+                    navController.navigate(Screen.Home.route){
+                        popUpTo(Screen.Launch.route) {
+                            inclusive = true
+                        }
+                    }
                 },
                 modifier = Modifier
                     .requiredHeight(56.dp)

@@ -39,14 +39,18 @@ fun Notification() {
         NotificationData("Update Available", "A new app update is ready to install.", Icons.Filled.Notifications)
     )
 
-    LazyColumn(
-        modifier = Modifier.background(inversePrimaryLight).fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        items(notifications) { notification ->
-            NotificationCard(notification)
-            Spacer(modifier = Modifier.padding(8.dp))
+    Column {
+        LazyColumn(
+            modifier = Modifier
+                .background(inversePrimaryLight)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            items(notifications) { notification ->
+                NotificationCard(notification)
+                Spacer(modifier = Modifier.padding(8.dp))
+            }
         }
     }
 }

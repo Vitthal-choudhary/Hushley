@@ -37,9 +37,8 @@ import com.example.hushley.ui.theme.secondaryDark
 
 @Composable
 fun Profile(){
-    Box(
-        modifier = Modifier.fillMaxSize().background(secondaryContainerDarkMediumContrast),
-        contentAlignment = Alignment.Center
+    Column (
+        modifier = Modifier.fillMaxSize().background(secondaryContainerDarkMediumContrast)
     ) {
         LazyColumn(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center, modifier = Modifier.fillMaxSize()) {
             item {
