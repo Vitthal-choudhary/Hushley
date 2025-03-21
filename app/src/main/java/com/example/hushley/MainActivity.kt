@@ -14,6 +14,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.hushley.Screens.Notification
+import com.example.hushley.Screens.Profile
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +32,13 @@ class MainActivity : ComponentActivity() {
                         Launch(navController)
                     }
                     composable(Screen.Home.route) {
-                        HomeScreen()
+                        HomeScreen(navController)
+                    }
+                    composable(Screen.Notification.route) {
+                        Notification()
+                    }
+                    composable(Screen.Profile.route) {
+                        Profile()
                     }
                 }
             }
