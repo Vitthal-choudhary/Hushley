@@ -1,6 +1,7 @@
 package com.example.hushley.Screens
 
-import android.util.Log
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -14,9 +15,16 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.hushley.Navigation.Screen;
+import com.example.hushley.R
+import com.example.hushley.ui.theme.AppTypography
+import com.example.hushley.ui.theme.primaryLight
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -28,47 +36,89 @@ fun HomeScreen(navController: NavHostController) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .background(primaryLight)
                 .padding(paddingValues)
         ) {
-            LazyRow(
+            OutlinedTextField(
+                value = "",
+                onValueChange = { },
+                placeholder = { Text("Search") },
+                leadingIcon = { Icon(Icons.Default.Search, "Search") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+                    .background(Color.White, RoundedCornerShape(25.dp)),
+                shape = RoundedCornerShape(25.dp),
+                singleLine = true
+            )
+            Text(
+                "Find Pets",
                 modifier = Modifier.padding(16.dp),
+                style = AppTypography.headlineLarge
+            )
+            LazyRow(
+                contentPadding = PaddingValues(horizontal = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 items(6) { index ->
-                    // Debug log
-                    Log.d("HomeScreen", "Building card: $index")
                     Card(
                         modifier = Modifier
-                            .size(150.dp, 200.dp),
-                        shape = RoundedCornerShape(8.dp),
-                        colors = CardDefaults.cardColors(containerColor = Color.LightGray)
+                            .size(width = 150.dp, height = 200.dp)
                     ) {
                         Box(
-                            contentAlignment = Alignment.Center,
-                            modifier = Modifier.fillMaxSize()
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.White)
                         ) {
-                            Text(text = "Card $index")
+
+                            val dogImages = listOf(
+                                R.drawable.beagle,
+                                R.drawable.boxer,
+                                R.drawable.bulldog,
+                                R.drawable.rottweiler,
+                                R.drawable.german_shephard,
+                                R.drawable.golden_retriever
+                            )
+                            Image(
+                                painter = painterResource(id = dogImages[index]),
+
+                                contentScale = ContentScale.Crop,
+                                contentDescription = "Dog Image",
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .clip(RoundedCornerShape(8.dp))
+                            )
                         }
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(16.dp))
 
-            LazyRow(
+            Text(
+                "Find Shelters",
                 modifier = Modifier.padding(16.dp),
+                style = AppTypography.headlineLarge,
+            )
+            LazyRow(
+                contentPadding = PaddingValues(horizontal = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 items(6) { index ->
                     Card(
                         modifier = Modifier
-                            .size(150.dp, 200.dp),
-                        shape = RoundedCornerShape(8.dp),
-                        colors = CardDefaults.cardColors(containerColor = Color.LightGray)
+                            .size(width = 150.dp, height = 200.dp)
                     ) {
                         Box(
-                            contentAlignment = Alignment.Center,
-                            modifier = Modifier.fillMaxSize()
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.White)
                         ) {
-                            Text(text = "Card $index")
+                            Text(
+                                "Card ${index + 1}",
+                                modifier = Modifier
+                                    .padding(16.dp)
+                                    .align(Alignment.Center)
+                            )
                         }
                     }
                 }
