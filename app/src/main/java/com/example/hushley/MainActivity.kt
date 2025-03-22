@@ -10,10 +10,7 @@ import com.example.hushley.Navigation.Screen
 import com.example.hushley.Screens.HomeScreen
 import com.example.hushley.Screens.Launch
 import com.example.hushley.ui.theme.HushleyTheme
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.example.hushley.Screens.Notification
 import com.example.hushley.Screens.Profile
 
@@ -35,10 +32,10 @@ class MainActivity : ComponentActivity() {
                         HomeScreen(navController)
                     }
                     composable(Screen.Notification.route) {
-                        Notification()
+                        Notification(navController)
                     }
                     composable(Screen.Profile.route) {
-                        Profile()
+                        Profile(navController)
                     }
                 }
             }
