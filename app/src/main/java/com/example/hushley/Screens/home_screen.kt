@@ -113,11 +113,22 @@ fun HomeScreen(navController: NavHostController) {
                                 .fillMaxSize()
                                 .background(Color.White)
                         ) {
-                            Text(
-                                "Card ${index + 1}",
+                            val shelterImages = listOf(
+                                R.drawable.aiken,
+                                R.drawable.cheyenne,
+                                R.drawable.jackson,
+                                R.drawable.laramie,
+                                R.drawable.newberg,
+                                R.drawable.susquehanna
+                            )
+                            Image(
+                                painter = painterResource(id = shelterImages[index]),
+
+                                contentScale = ContentScale.Crop,
+                                contentDescription = "Shelter Image",
                                 modifier = Modifier
-                                    .padding(16.dp)
-                                    .align(Alignment.Center)
+                                    .fillMaxSize()
+                                    .clip(RoundedCornerShape(8.dp))
                             )
                         }
                     }
