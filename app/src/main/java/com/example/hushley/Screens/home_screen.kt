@@ -122,7 +122,7 @@ fun HomeContent() {
             contentPadding = PaddingValues(horizontal = 16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            items(6) { index -> // Set number of cards to 6
+            items(6) { index ->
                 Card(
                     modifier = Modifier
                         .size(width = 150.dp, height = 200.dp)
