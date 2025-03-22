@@ -5,7 +5,10 @@ sealed class Screen(val route: String) {
     object Home : Screen("home")
     object Notification : Screen("notification")
     object Profile : Screen("profile")
-    object DogInfo : Screen("dog_info/{dogId}") {
-        fun createRoute(dogId: Int) = "dog_info/$dogId"
-    }
+    object Dog1 : Screen("dog1")
+    object Dog2 : Screen("dog2")
+    object Dog3 : Screen("dog3")
+    object Dog4 : Screen("dog4")
+    object Dog5 : Screen("dog5")
+    object Dog6 : Screen("dog6")
 }

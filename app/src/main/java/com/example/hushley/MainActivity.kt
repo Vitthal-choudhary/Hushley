@@ -11,7 +11,12 @@ import com.example.hushley.Screens.HomeScreen
 import com.example.hushley.Screens.Launch
 import com.example.hushley.ui.theme.HushleyTheme
 import androidx.navigation.compose.composable
-import com.example.hushley.Screens.DogInfoScreen
+import com.example.hushley.Screens.Dog1Screen
+import com.example.hushley.Screens.Dog2Screen
+import com.example.hushley.Screens.Dog3Screen
+import com.example.hushley.Screens.Dog4Screen
+import com.example.hushley.Screens.Dog5Screen
+import com.example.hushley.Screens.Dog6Screen
 import com.example.hushley.Screens.Notification
 import com.example.hushley.Screens.Profile
 
@@ -38,8 +43,23 @@ class MainActivity : ComponentActivity() {
                     composable(Screen.Profile.route) {
                         Profile(navController)
                     }
-                    composable(Screen.DogInfo.route) { backStackEntry ->
-                        DogInfoScreen(navController, backStackEntry)
+                    composable(Screen.Dog1.route) {
+                        Dog1Screen(navController)
+                    }
+                    composable(Screen.Dog2.route) {
+                        Dog2Screen(navController)
+                    }
+                    composable(Screen.Dog3.route) {
+                        Dog3Screen(navController)
+                    }
+                    composable(Screen.Dog4.route) {
+                        Dog4Screen(navController)
+                    }
+                    composable(Screen.Dog5.route) {
+                        Dog5Screen(navController)
+                    }
+                    composable(Screen.Dog6.route) {
+                        Dog6Screen(navController)
                     }
                 }
             }

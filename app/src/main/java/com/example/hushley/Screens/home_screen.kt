@@ -5,11 +5,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.material.icons.Icons
@@ -66,7 +64,14 @@ fun HomeScreen(navController: NavHostController) {
                         modifier = Modifier
                             .size(width = 150.dp, height = 200.dp)
                             .clickable{
-                                navController.navigate(Screen.DogInfo.createRoute(index))
+                                when (index) {
+                                    0 -> navController.navigate(Screen.Dog1.route)
+                                    1 -> navController.navigate(Screen.Dog2.route)
+                                    2 -> navController.navigate(Screen.Dog3.route)
+                                    3 -> navController.navigate(Screen.Dog4.route)
+                                    4 -> navController.navigate(Screen.Dog5.route)
+                                    5 -> navController.navigate(Screen.Dog6.route)
+                                }
                             }
                     ) {
                         Box(
