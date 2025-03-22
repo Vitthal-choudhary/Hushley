@@ -11,6 +11,7 @@ import com.example.hushley.Screens.HomeScreen
 import com.example.hushley.Screens.Launch
 import com.example.hushley.ui.theme.HushleyTheme
 import androidx.navigation.compose.composable
+import com.example.hushley.Screens.DogInfoScreen
 import com.example.hushley.Screens.Notification
 import com.example.hushley.Screens.Profile
 
@@ -36,6 +37,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable(Screen.Profile.route) {
                         Profile(navController)
+                    }
+                    composable(Screen.DogInfo.route) { backStackEntry ->
+                        DogInfoScreen(navController, backStackEntry)
                     }
                 }
             }

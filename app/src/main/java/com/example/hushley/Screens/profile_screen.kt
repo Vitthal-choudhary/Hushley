@@ -1,5 +1,6 @@
 package com.example.hushley.Screens
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -21,6 +22,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,6 +31,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.hushley.Navigation.Screen
 import com.example.hushley.R
 import com.example.hushley.ui.theme.*
 
@@ -47,6 +50,8 @@ fun Profile(navController: NavHostController) {
             )
         )
     }
+
+    val context = LocalContext.current
 
     // State to control edit dialog visibility
     var showEditDialog by remember { mutableStateOf(false) }
@@ -106,7 +111,9 @@ fun Profile(navController: NavHostController) {
                 }
                 item {
                     Button(
-                        onClick = {},
+                        onClick = {
+                            navController.navigate(Screen.Launch.route)
+                        },
                         modifier = Modifier
                             .fillMaxWidth(0.5f)
                             .padding(10.dp)
@@ -179,7 +186,6 @@ fun EditProfileDialog(
     onSave: (Map<String, String>) -> Unit,
     onDismiss: () -> Unit
 ) {
-    // Create mutable state for each field
     val editableDetails = remember {
         initialDetails.mapValues { (_, value) -> mutableStateOf(value) }
     }
