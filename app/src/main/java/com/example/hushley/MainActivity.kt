@@ -19,6 +19,12 @@ import com.example.hushley.Screens.Dog5Screen
 import com.example.hushley.Screens.Dog6Screen
 import com.example.hushley.Screens.Notification
 import com.example.hushley.Screens.Profile
+import com.example.hushley.Screens.Shelter1Screen
+import com.example.hushley.Screens.Shelter2Screen
+import com.example.hushley.Screens.Shelter3Screen
+import com.example.hushley.Screens.Shelter4Screen
+import com.example.hushley.Screens.Shelter5Screen
+import com.example.hushley.Screens.Shelter6Screen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +66,24 @@ class MainActivity : ComponentActivity() {
                     }
                     composable(Screen.Dog6.route) {
                         Dog6Screen(navController)
+                    }
+                    composable(Screen.Shelter1.route) {
+                        Shelter1Screen(navController)
+                    }
+                    composable(Screen.Shelter2.route) {
+                        Shelter2Screen(navController)
+                    }
+                    composable(Screen.Shelter3.route) {
+                        Shelter3Screen(navController)
+                    }
+                    composable(Screen.Shelter4.route) {
+                        Shelter4Screen(navController)
+                    }
+                    composable(Screen.Shelter5.route) {
+                        Shelter5Screen(navController)
+                    }
+                    composable(Screen.Shelter6.route) {
+                        Shelter6Screen(navController)
                     }
                 }
             }

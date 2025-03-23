@@ -11,4 +11,10 @@ sealed class Screen(val route: String) {
     object Dog4 : Screen("dog4")
     object Dog5 : Screen("dog5")
     object Dog6 : Screen("dog6")
+    object Shelter1 : Screen("shelter1")
+    object Shelter2 : Screen("shelter2")
+    object Shelter3 : Screen("shelter3")
+    object Shelter4 : Screen("shelter4")
+    object Shelter5 : Screen("shelter5")
+    object Shelter6 : Screen("shelter6")
 }

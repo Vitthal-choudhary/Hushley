@@ -116,6 +116,16 @@ fun HomeScreen(navController: NavHostController) {
                     Card(
                         modifier = Modifier
                             .size(width = 150.dp, height = 200.dp)
+                            .clickable{
+                                when (index) {
+                                    0 -> navController.navigate(Screen.Shelter1.route)
+                                    1 -> navController.navigate(Screen.Shelter2.route)
+                                    2 -> navController.navigate(Screen.Shelter3.route)
+                                    3 -> navController.navigate(Screen.Shelter4.route)
+                                    4 -> navController.navigate(Screen.Shelter5.route)
+                                    5 -> navController.navigate(Screen.Shelter6.route)
+                                }
+                            }
                     ) {
                         Box(
                             modifier = Modifier
