@@ -148,7 +148,7 @@ fun Dog2Screen(navController: NavHostController) {
                 .height(240.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.german_shephard),
+                painter = painterResource(id = R.drawable.boxer),
                 contentDescription = "German Shepherd",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
@@ -245,7 +245,7 @@ fun Dog3Screen(navController: NavHostController) {
                 .height(240.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.golden_retriever),
+                painter = painterResource(id = R.drawable.bulldog),
                 contentDescription = "Golden Retriever",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
@@ -342,8 +342,8 @@ fun Dog4Screen(navController: NavHostController) {
                 .height(240.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.golden_retriever),
-                contentDescription = "Husky",
+                painter = painterResource(id = R.drawable.rottweiler),
+                contentDescription = "German Shepherd",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
             )
@@ -439,7 +439,7 @@ fun Dog5Screen(navController: NavHostController) {
                 .height(240.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.bulldog),
+                painter = painterResource(id = R.drawable.german_shephard),
                 contentDescription = "Labrador",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
@@ -536,7 +536,7 @@ fun Dog6Screen(navController: NavHostController) {
                 .height(240.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.boxer),
+                painter = painterResource(id = R.drawable.golden_retriever),
                 contentDescription = "Pug",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
